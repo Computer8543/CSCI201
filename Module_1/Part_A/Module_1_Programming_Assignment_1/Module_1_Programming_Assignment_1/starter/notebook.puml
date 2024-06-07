@@ -1,0 +1,58 @@
+@startuml
+
+
+skinparam ClassAttributeIconSize 0
+
+
+
+/' Objects '/
+
+class notebook {
+	+notebook(double w, double h, int p, std::string pt, std::string f, std::string pc, std::string ct, std::string cd)
+	+getHeight() : double const
+	+getWidth() : double const
+	-height : double
+	-width : double
+	+getPages() : int const
+	-pages : int
+	-coverDesign : std::string
+	-coverType : std::string
+	-format : std::string
+	+getCoverDesign() : std::string const
+	+getCoverType() : std::string const
+	+getFormat() : std::string const
+	+getPaperColor() : std::string const
+	+getPaperType() : std::string const
+	-paperColor : std::string
+	-paperType : std::string
+	+toString() : std::string const
+	+setCoverDesign(std::string cd) : void
+	+setCoverType(std::string ct) : void
+	+setFormat(std::string f) : void
+	+setHeight(double h) : void
+	+setPages(int p) : void
+	+setPaperColor(std::string pc) : void
+	+setPaperType(std::string pt) : void
+	+setWidth(double w) : void
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+
+
+
+/' Aggregation relationships '/
+
+
+
+
+
+/' Nested objects '/
+
+
+
+@enduml

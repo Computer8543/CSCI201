@@ -5,18 +5,35 @@
 // methods can be used to give controlled access to attributes
 
 // constructor - no return type. all it can return is a bank account 
-bankaccount::bankaccount(string account, double initialDeposit, int pin) {
+bankaccount::bankaccount(string account, double initialDeposit, int pinCode) {
 	accountNumber = account;
 	balance = initialDeposit;
 	routing = "045454";
+	pin = pinCode;
+	cout << "Creating account " << accountNumber << endl;
+}
 
+// destructor - no return type.
+bankaccount::~bankaccount() {
+	// if there is any cleanup that needs to be done when "deleting" an object - do it here. 
+	std::cout << "Closing Account " << accountNumber << std::endl;
+
+	if (balance > 0) {
+		std::cout << "Issuing Check for $" << balance << std::endl;
+	}
+	else if (balance < 0) {
+		std::cout << "Turning Account over to collections!!!" << std::endl;
+	}
 }
 // accessor methods "getter methods"
-string bankaccount::getAccountNumber() {
+string bankaccount::getAccountNumber() const {
 	return accountNumber;
 }
-double bankaccount::getBalance() {
+double bankaccount::getBalance() const {
 	return balance;
+}
+string bankaccount::toString() const {
+	string result "Account: " << accountNumber << "has a balance of " << to_string(balance);
 }
 double bankaccount::deposit(double amount, int pinCode) {
 	if (amount < 0)
@@ -39,6 +56,6 @@ double bankaccount::withdraw(double amount, int pinCode) {
 	return balance;
 }
 
-string bankaccount::getRoutingNumber() {
+string bankaccount::getRoutingNumber() const {
 	return routing;
 }

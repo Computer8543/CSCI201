@@ -4,7 +4,8 @@
 #include <iostream>
 #include <string>
 #include "BankAccount.h"
-
+#include "Customer.h"
+#include "Circle.h"
 using namespace std;
 
 struct address {
@@ -23,8 +24,19 @@ struct student {
     float gpa;
 };
 
+void printAccount(bankaccount &thisaccount) {
+    cout << "\n\tAccount" << thisaccount.getAccountNumber() << "has a balance of " << thisaccount.getBalance() << endl;
+    thisaccount.deposit(3000, 1234);
+}
+
 int main()
 {
+
+    Circle myCircle(5.2);
+    Circle yourCircle;
+
+    Circle myCircles[20];
+
     /*
    // string name;
    // cin >> name;
@@ -50,10 +62,14 @@ int main()
     bankaccount myAccount("ABC1234", 300.00, pin); // constructor allows us to intitialize an object
 
     // use accessor methods to retrieve information 
-    cout << myAccount.getAccountNumber() << " has a balance of " << myAccount.getBalance() << endl;
+    // cout << myAccount.getAccountNumber() << " has a balance of " << myAccount.getBalance() << endl;
+    // printAccount(myAccount);
+    cout << myAccount.toString() << endl;
 
     // mutator methods to "change" the object 
     myAccount.deposit(amount, pin);
+
+    printAccount(myAccount);
 
     cout << myAccount.getAccountNumber() << " has a balance of " << myAccount.getBalance() << endl;
 
@@ -63,6 +79,15 @@ int main()
     myAccount.withdraw(amount, pin);
 
     cout << myAccount.getAccountNumber() << " has a balance of " << myAccount.getBalance() << endl;
+
+    {
+        bankaccount yourAccount("234", 50.00, 1234);
+
+        myAccount.deposit(50, 1234);
+        yourAccount.deposit(50, 1234);
+    }
+
+    cout << "Have a nice day!!!" << endl;
 
     return 0;
 }
