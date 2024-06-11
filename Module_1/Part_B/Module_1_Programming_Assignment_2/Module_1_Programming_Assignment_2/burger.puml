@@ -1,0 +1,125 @@
+@startuml
+
+skinparam ClassAttributeIconSize 0
+
+
+
+/' Objects '/
+
+class burger {
+	+burger(proteinType, condimentType[],int, toppingType[], int, bunType, cheeseType, int)
+	-isVeg : bool
+	+isVeggie() const: bool 
+	-bun : bunType
+	-cheese : cheeseType
+	-condiments : condimentType[]
+	-numCondiments : int
+	+getPrice() const: double 
+	+getBun() const: bunType 
+	+getCheese() const: cheeseType 
+	+getNumPatties() const: int 
+	+getProtein() const: proteinType 
+	-numPatties : int
+	-protein : proteinType
+	+getCondiments() const: std::string 
+	+getToppings() const: std::string 
+	+tostring() const: std::string 
+	-toppings : toppingType[]
+	-numToppings : int
+	+setBun(bunType) : void
+	+setCheese(cheeseType) : void
+	+setCondiments(condimentType[], int) : void
+	+setNumPatties(int) : void
+	+setProtein(proteinType) : void
+	+setToppings(toppingType[], int) : void
+}
+
+
+enum bunType {
+	BRIOCHE
+	ONION
+	RYE
+	SESAME
+	WHEAT
+	NOBUN
+	GLUTENFREE
+}
+
+
+enum cheeseType {
+	AMERICAN
+	CHEDDAR
+	COLBYJACK
+	PEPPERJACK
+	SWISS
+	NOCHEESE
+}
+
+
+enum condimentType {
+	BBQ
+	KETCHUP
+	MAYO
+	MUSTARD
+	PEPPERCORN
+	SPECIAL
+	STEAK
+	NOCOND
+}
+
+
+enum proteinType {
+	BEEF
+	CHICKEN
+	MUSH
+	TURKEY
+	VEGGIE
+}
+
+
+enum toppingType {
+	BACON
+	GRILLONION
+	LETTUCE
+	MUSHROOM
+	PICKLE
+	RAWONION
+	TOMATO
+	NOTOP
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+
+
+
+/' Aggregation relationships '/
+
+.burger *-- .bunType
+
+
+.burger *-- .cheeseType
+
+
+.burger *-- .condimentType
+
+
+.burger *-- .proteinType
+
+
+.burger *-- .toppingType
+
+
+
+
+
+
+/' Nested objects '/
+
+
+
+@enduml
