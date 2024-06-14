@@ -12,6 +12,7 @@ map<Make, std::string> makeString{ {Ford, "Ford"}, {Chevy, "Chevy"}, {Dodge, "Do
 std::string makes[] = { "Ford", "Chevy" };
 
 class Automobile {
+	friend void printCarSpecs(const Automobile& thisAutomobile);
 private:
 	Make make;
 	std::string model;
@@ -24,6 +25,7 @@ private:
 	double fuelCapacity; // amount in gallons
 	bool roofOpen; // does the roof open or not
 	bool windowsTinted; // are the windows tinted or not
+	static int carCount; // belongs to the CLASS, not the object 
 public:
 	// constructor
 	Automobile(Make make, std::string model, std::string color, std::string vin, int year, bool roofOpen, bool windowsTinted);
@@ -36,10 +38,11 @@ public:
 	std::string getModel() const;
 	std::string getColor() const;
 	std::string getVin() const;
+	double getMPG() const;
 	int getYear() const;
 	bool getRoofOpen() const;
 	bool getWindowsTinted() const;
-	std::string toString();
+	static int getCarCount() const;
 
 	// mutator methods
 	double drive(double distance);
@@ -48,4 +51,5 @@ public:
 	void openOrCloseRoof(bool roof);
 	void replaceWindows(bool windows);
 	
+	std::string toString();
 };

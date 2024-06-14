@@ -4,8 +4,15 @@
 #include <stdexcept>
 #include "Automobile.h"
 
+int Automobile::carCount = 0; // must initialize static members
+
 // constructor
 Automobile::Automobile(Make make, std::string model, std::string color, std::string vin, int year, bool roofOpen, bool windowsTinted) {
+	if (model == "")
+	{
+		throw std::invalid_argument("Must Specify Model!!!");
+	}
+
 	this->make = make;
 	this->model = model;
 	this->color = color;
@@ -18,6 +25,8 @@ Automobile::Automobile(Make make, std::string model, std::string color, std::str
 	mpg = 30.0;
 	fuelCapacity = 10.0;
 	fuelLevel = 10.0;
+
+	carCount += 1;
 
 	std::cout << "Creating " << color << year << " " << make << " " << model << " ";
 
@@ -35,6 +44,7 @@ Automobile::Automobile(Make make, std::string model, std::string color, std::str
 // destructor 
 Automobile::~Automobile() {
 	std::cout << "Printing certificate of destruction for " << vin << std::endl;
+	carCount -= 1;
 }
 // accessor methods
 Make Automobile::getMake() const {
@@ -57,6 +67,9 @@ bool Automobile::getRoofOpen() const {
 }
 bool Automobile::getWindowsTinted() const {
 	return windowsTinted;
+}
+static int Automobile::getCarCount() const { // belongs to the class 
+	return carCount;
 }
 
 // mutator methods
