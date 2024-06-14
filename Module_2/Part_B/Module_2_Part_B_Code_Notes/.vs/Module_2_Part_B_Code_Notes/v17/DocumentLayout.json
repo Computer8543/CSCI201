@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\spect\\source\\repos\\CSCI201\\Module_2\\Part_B\\Module_2_Part_B_Code_Notes\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E6B4AC74-63B6-4D26-B36A-6B21D94A0BFA}|Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes.vcxproj|C:\\Users\\spect\\source\\repos\\CSCI201\\Module_2\\Part_B\\Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E6B4AC74-63B6-4D26-B36A-6B21D94A0BFA}|Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes.vcxproj|solutionrelative:Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Module_2_Part_B_Code_Notes.cpp",
+              "DocumentMoniker": "C:\\Users\\spect\\source\\repos\\CSCI201\\Module_2\\Part_B\\Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes.cpp",
+              "RelativeDocumentMoniker": "Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes.cpp",
+              "ToolTip": "C:\\Users\\spect\\source\\repos\\CSCI201\\Module_2\\Part_B\\Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes.cpp",
+              "RelativeToolTip": "Module_2_Part_B_Code_Notes\\Module_2_Part_B_Code_Notes.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-12T18:41:39.677Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
