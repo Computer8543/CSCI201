@@ -1,0 +1,96 @@
+@startuml
+
+
+skinparam ClassAttributeIconSize 0
+
+
+/' Objects '/
+
+class character {
+	+character(std::string name, double hp, double mp, int strength, int dexterity, int intelligence, int speed, int endurance, int faith)
+	+attack() : double
+	+getHp() const : double 
+	+getMp() const : double 
+	#hp : double
+	#mp : double
+	#dexterity : int
+	#endurance : int
+	#faith : int
+	+getDexterity() const : int 
+	+getEndurance() const : int 
+	+getFaith() const : int 
+	+getIntelligence() const : int 
+	+getSpeed() const : int 
+	+getStrength() const : int 
+	#intelligence : int
+	#speed : int
+	#strength : int
+	+getName() const : std::string 
+	#name : std::string
+	+tostring() : std::string
+	+setDexterity(int dexterity) : void
+	+setEndurance(int endurance) : void
+	+setFaith(int faith) : void
+	+setHp(double hp) : void
+	+setIntelligence(int intelligence) : void
+	+setMp(double mp) : void
+	+setSpeed(int speed) : void
+	+setStrength(int strength) : void
+}
+
+
+class cleric {
+	+cleric(std::string name)
+	+heal() : double
+}
+
+
+class fighter {
+	+fighter(std::string name)
+	+strongAttack() : double
+}
+
+
+class magician {
+	+magician(std::string name)
+	+cast() : double
+}
+
+
+class rogue {
+	+rogue(std::string name)
+	+steal() : double
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+character <|-- cleric
+
+
+character <|-- fighter
+
+
+character <|-- magician
+
+
+character <|-- rogue
+
+
+
+
+
+/' Aggregation relationships '/
+
+
+
+
+
+/' Nested objects '/
+
+
+
+@enduml
