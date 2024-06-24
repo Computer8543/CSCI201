@@ -1,0 +1,2 @@
+﻿  Module_3_Monday_Code_Notes.cpp
+C:\Users\spect\source\repos\CSCI201\Module_3\Part_A\Module_3_Monday_Code_Notes\Module_3_Monday_Code_Notes\Module_3_Monday_Code_Notes.cpp(103,1): error C4703: potentially uninitialized local pointer variable 'scores' used

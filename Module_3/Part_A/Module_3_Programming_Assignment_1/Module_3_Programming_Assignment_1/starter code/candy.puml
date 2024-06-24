@@ -1,0 +1,62 @@
+@startuml
+skinparam ClassAttributeIconSize 0
+
+
+
+
+/' Objects '/
+
+class candy {
+	+candy(flavorType flavor, colorType color)
+	-color : colorType
+	-flavor : flavorType
+	+getColor() : int
+	+getFlavor() : int
+	+setColor(colorType color) : void
+	+setFlavor(flavorType flavor) : void
+}
+
+
+enum colorType {
+	AMETHYST_HAZE
+	AZURE_SKY
+	EMERALD_MIST
+	GOLDENROD_GLOW
+	SCARLET_BLAZE
+}
+
+
+enum flavorType {
+	CITRUS_SPLASH
+	COLA
+	COTTON_CANDY
+	PAPAYA_BLISS
+	WATERMELON_BURST
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+
+
+
+/' Aggregation relationships '/
+
+candy *-- colorType
+
+
+candy *-- flavorType
+
+
+
+
+
+
+/' Nested objects '/
+
+
+
+@enduml
