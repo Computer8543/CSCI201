@@ -1,0 +1,58 @@
+bag& bag::operator=(bag otherBag) {
+    swap(otherBag);
+    return *this;
+}
+void bag::swap(bag& otherBag) {
+    // initialize tmp variable
+    bag tmp;
+
+    tmp.numCandies = numCandies;
+    tmp.candies = new candy * [tmp.numCandies];
+
+    // we fill up tmp.candies[i] with filler data so that it doesn't try to say that we can't access the data in candies
+    for (int i = 0; i < numCandies; i++)
+    {
+        tmp.candies[i] = new candy(COTTON_CANDY, SCARLET_BLAZE);
+    }
+
+    // we do a deep copy of otherBag.candies into tmp.candies
+    for (int j = 0; j < numCandies; j++)
+    {
+        tmp.candies[j]->setColor(otherBag.candies[j]->intToColorType(otherBag.candies[j]->getColor()));
+        tmp.candies[j]->setFlavor(otherBag.candies[j]->intToFlavorType(otherBag.candies[j]->getFlavor()));
+    }
+
+    // swap numCandies between bags
+    std::swap(numCandies, otherBag.numCandies);
+    
+    // get candies[k] into otherBag.candies[k]
+    for (int k = 0; k < numCandies; k++)
+    {
+        otherBag.candies[k]->setColor(candies[k]->intToColorType(candies[k]->getColor()));
+        otherBag.candies[k]->setFlavor(candies[k]->intToFlavorType(candies[k]->getFlavor()));
+    }
+        
+    // get tmp.candies into candies
+    for (int l = 0; l < tmp.numCandies; l++)
+    {
+        candies[l]->setColor(tmp.candies[l]->intToColorType(tmp.candies[l]->getColor()));
+        candies[l]->setFlavor(tmp.candies[l]->intToFlavorType(tmp.candies[l]->getFlavor()));
+    }
+
+    // delete tmp.candies elements
+    for (int m = 0; m < tmp.numCandies; m++)
+    {
+        delete tmp.candies[m];
+        tmp.candies[m] = NULL;
+    }
+
+    // delete tmp.candies
+    delete[] tmp.candies;
+    tmp.candies = NULL;
+    
+
+
+
+
+
+

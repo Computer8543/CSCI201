@@ -1,0 +1,40 @@
+@startuml
+
+skinparam ClassAttributeIconSize 0
+
+
+
+/' Objects '/
+
+class bag {
+	+bag()
+	+bag(const bag& otherBag)
+	+~bag()
+	+duplicateCheck(int currentCount, candy newCandy) : bool
+	-candies : candy**
+	-numCandies : int
+	+getCandyList() : std::string
+	+copyBag(const bag& otherBag) : void
+	+fillBag() : void
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+
+
+
+/' Aggregation relationships '/
+
+
+
+
+
+/' Nested objects '/
+
+
+
+@enduml
