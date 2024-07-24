@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\spect\\source\\repos\\CSCI201\\Module_6\\Part_A\\Module_6_Lecture_Code_Notes_Assert\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5AA1E67C-EB03-4170-81BD-4B5CE6BCDA4D}|Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert.vcxproj|C:\\Users\\spect\\source\\repos\\CSCI201\\Module_6\\Part_A\\Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AA1E67C-EB03-4170-81BD-4B5CE6BCDA4D}|Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert.vcxproj|solutionrelative:Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Module_6_Lecture_Code_Notes_Assert.cpp",
+              "DocumentMoniker": "C:\\Users\\spect\\source\\repos\\CSCI201\\Module_6\\Part_A\\Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert.cpp",
+              "RelativeDocumentMoniker": "Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert.cpp",
+              "ToolTip": "C:\\Users\\spect\\source\\repos\\CSCI201\\Module_6\\Part_A\\Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert.cpp",
+              "RelativeToolTip": "Module_6_Lecture_Code_Notes_Assert\\Module_6_Lecture_Code_Notes_Assert.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAACeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-08T18:18:59.361Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

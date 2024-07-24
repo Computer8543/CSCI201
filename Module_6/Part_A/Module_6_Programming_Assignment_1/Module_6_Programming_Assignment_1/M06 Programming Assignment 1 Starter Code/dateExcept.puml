@@ -1,0 +1,42 @@
+@startuml
+
+!theme blueprint
+
+
+
+/' Objects '/
+
+class invalid_day {
+	+invalid_day(std::string)
+}
+
+
+class invalid_month {
+	+invalid_month(std::string)
+}
+
+
+class invalid_year {
+	+invalid_year(std::string)
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+
+
+
+/' Aggregation relationships '/
+
+
+
+
+
+/' Nested objects '/
+
+
+
+@enduml

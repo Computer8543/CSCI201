@@ -1,0 +1,4 @@
+﻿  Module_6_Lecture_Code_Notes_Assert.cpp
+C:\Users\spect\source\repos\CSCI201\Module_6\Part_A\Module_6_Lecture_Code_Notes_Assert\Module_6_Lecture_Code_Notes_Assert\Module_6_Lecture_Code_Notes_Assert.cpp(28,21): warning C4101: 'e': unreferenced local variable
+C:\Users\spect\source\repos\CSCI201\Module_6\Part_A\Module_6_Lecture_Code_Notes_Assert\Module_6_Lecture_Code_Notes_Assert\Module_6_Lecture_Code_Notes_Assert.cpp(48,1): warning C4715: 'accumulateTotal': not all control paths return a value
+  Module_6_Lecture_Code_Notes_Assert.vcxproj -> C:\Users\spect\source\repos\CSCI201\Module_6\Part_A\Module_6_Lecture_Code_Notes_Assert\x64\Debug\Module_6_Lecture_Code_Notes_Assert.exe
