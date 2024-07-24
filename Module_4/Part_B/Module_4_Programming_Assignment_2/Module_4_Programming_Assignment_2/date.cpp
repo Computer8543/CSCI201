@@ -1,6 +1,6 @@
 /* Program name: date.h
 *  Author: Kyle Ingersoll
-*  Date last updated: 6/30/2024
+*  Date last updated: 7/1/2024
 *  Purpose: Demonstrate operator overloading in a class. This is the class definition for the date class.
 */
 
@@ -65,7 +65,7 @@ bool date::isLeapYear() {
 // operator overload methods
 bool date::operator!=(const date& otherDate) const {
 	// if all the variables of this object and the otherDate object match, return false, else return true.
-	if (this->day == otherDate.day && this->month == otherDate.month && this->year == otherDate.year)
+	if (day == otherDate.day && month == otherDate.month && year == otherDate.year)
 	{
 		return false;
 	}
@@ -76,51 +76,83 @@ bool date::operator!=(const date& otherDate) const {
 
 bool date::operator<(const date& otherDate) const {
 	// if any of the original object values are greater than or equal to the otherDate values, return false, else, return true.
-	if (this->day >= otherDate.day || this->month >= otherDate.month || this->year >= otherDate.year) {
-		return false;
+	if (year < otherDate.year) {
+		return true;
+	}
+	else if (year == otherDate.year && month < otherDate.month)
+	{
+		return true;
+	}
+	else if (year == otherDate.year && month == otherDate.month && day < otherDate.day)
+	{
+		return true;
 	}
 	else {
-		return true;
+		return false;
 	}
 }
 
 bool date::operator<=(const date& otherDate) const {
 	// if any of the original object values are greater than the otherDate values, return false, else, return true.
-	if (this->day > otherDate.day || this->month > otherDate.month || this->year > otherDate.year) {
-		return false;
+	if (year <= otherDate.year) {
+		return true;
+	}
+	else if (year == otherDate.year && month <= otherDate.month)
+	{
+		return true;
+	}
+	else if (year == otherDate.year && month == otherDate.month && day <= otherDate.day)
+	{
+		return true;
 	}
 	else {
-		return true;
+		return false;
 	}
 }
 
 bool date::operator==(const date& otherDate) const {
 	// if any of the original object values are not equal to the otherDate values, return false, else, return true.
-	if (this->day != otherDate.day || this->month != otherDate.month || this->year != otherDate.year) {
-		return false;
+	if (day == otherDate.day && month == otherDate.month && year == otherDate.year) {
+		return true;
 	}
 	else {
-		return true;
+		return false;
 	}
 }
 
 bool date::operator>(const date& otherDate) const {
 	// if any of the original object values are less than or equal to the otherDate values, return false, else, return true.
-	if (this->day <= otherDate.day || this->month <= otherDate.month || this->year <= otherDate.year) {
-		return false;
+	if (year > otherDate.year) {
+		return true;
+	}
+	else if (year == otherDate.year && month > otherDate.month)
+	{
+		return true;
+	}
+	else if (year == otherDate.year && month == otherDate.month && day > otherDate.day)
+	{
+		return true;
 	}
 	else {
-		return true;
+		return false;
 	}
 }
 
 bool date::operator>=(const date& otherDate) const {
 	// if any of the original object values are less than the otherDate values, return false, else, return true.
-	if (this->day < otherDate.day || this->month < otherDate.month || this->year < otherDate.year) {
-		return false;
+	if (year >= otherDate.year) {
+		return true;
+	}
+	else if (year == otherDate.year && month >= otherDate.month)
+	{
+		return true;
+	}
+	else if (year == otherDate.year && month == otherDate.month && day >= otherDate.day)
+	{
+		return true;
 	}
 	else {
-		return true;
+		return false;
 	}
 }
 
@@ -254,116 +286,22 @@ date& date::operator+(int daysToAdd) {
 	// this is an approximate solution, it will only be inaccurate by about a few days or so as long as you aren't adding a huge number of days.
 	// you can't just add the days since they sit within months and years which you have to convert them too.
 
-	// initialize variables
-	int yearsToSubtract = 0;
-	int monthsToSubtract = 0;
-
-	if (daysToAdd % 365 == 0)
+	for (int i = 0; i < daysToAdd; i++)
 	{
-		year += (daysToAdd / 365);
-		return *this;
-
+		operator++(0);
 	}
-	else if (daysToAdd % 366 == 0)
-	{
-		year += (daysToAdd / 366);
-		return *this;
-	}
-	else if (daysToAdd % 31 == 0)
-	{
-		month += (daysToAdd / 31);
-		return *this;
-	}
-	else if (daysToAdd % 30 == 0)
-	{
-		month += (daysToAdd / 30);
-		return *this;
-	}
-	else if (daysToAdd % 29 == 0)
-	{
-		month += (daysToAdd / 29);
-		return *this;
-	}
-	else if (daysToAdd % 28 == 0)
-	{
-		month += (daysToAdd / 28);
-		return *this;
-	}
-	else if ((day + daysToAdd) < 28)
-	{
-		day += daysToAdd;
-		return *this;
-	}
-	else {
-		// since the daysToAdd and the private variables are ints, the quotient will also be an integer
-		year += (daysToAdd / 365);
-		yearsToSubtract += (daysToAdd / 365);
-		daysToAdd -= (yearsToSubtract * 365);
-		month += (daysToAdd / 28);
-		monthsToSubtract += (daysToAdd / 28);
-		daysToAdd -= (monthsToSubtract * 28);
-		day += daysToAdd;
-		return *this;
-
-	}
+	return *this;
 }
 
 date& date::operator-(int daysToSub) {
 	// this is an approximate solution, it will only be inaccurate by about a few days or so as long as you aren't adding a huge number of days.
 	// you can't just subtract the days since they sit within months and years which you have to convert them too.
 
-	// initialize variables
-	int yearsToSubtract = 0;
-	int monthsToSubtract = 0;
-
-	if (daysToSub % 365 == 0)
+	for (int i = 0; i < daysToSub; i++)
 	{
-		year -= (daysToSub / 365);
-		return *this;
-
+		operator--(0);
 	}
-	else if (daysToSub % 366 == 0)
-	{
-		year -= (daysToSub / 366);
-		return *this;
-	}
-	else if (daysToSub % 31 == 0)
-	{
-		month -= (daysToSub / 31);
-		return *this;
-	}
-	else if (daysToSub % 30 == 0)
-	{
-		month -= (daysToSub / 30);
-		return *this;
-	}
-	else if (daysToSub % 29 == 0)
-	{
-		month -= (daysToSub / 29);
-		return *this;
-	}
-	else if (daysToSub % 28 == 0)
-	{
-		month -= (daysToSub / 28);
-		return *this;
-	}
-	else if ((day + daysToSub) < 28)
-	{
-		day -= daysToSub;
-		return *this;
-	}
-	else {
-		// since the daysToAdd and the private variables are ints, the quotient will also be an integer
-		year -= (daysToSub / 365);
-		yearsToSubtract += (daysToSub / 365);
-		daysToSub -= (yearsToSubtract * 365);
-		month -= (daysToSub / 28);
-		monthsToSubtract += (daysToSub / 28);
-		daysToSub -= (monthsToSubtract * 28);
-		day -= daysToSub;
-		return *this;
-
-	}
+	return *this;
 }
 
 // getter functions 
@@ -421,116 +359,23 @@ date& operator+(int daysToAdd, date& addToDate) {
 	// this is an approximate solution, it will only be inaccurate by about a few days or so as long as you aren't adding a huge number of days.
 	// you can't just add the days since they sit within months and years which you have to convert them too.
 
-	// initialize variables
-	int yearsToSubtract = 0;
-	int monthsToSubtract = 0;
-
-	if (daysToAdd % 365 == 0)
+	for (int i = 0; i < daysToAdd; i++)
 	{
-		addToDate.year += (daysToAdd / 365);
-		return addToDate;
-
+		addToDate.operator++(0);
 	}
-	else if (daysToAdd % 366 == 0)
-	{
-		addToDate.year += (daysToAdd / 366);
-		return addToDate;
-	}
-	else if (daysToAdd % 31 == 0)
-	{
-		addToDate.month += (daysToAdd / 31);
-		return addToDate;
-	}
-	else if (daysToAdd % 30 == 0)
-	{
-		addToDate.month += (daysToAdd / 30);
-		return addToDate;
-	}
-	else if (daysToAdd % 29 == 0)
-	{
-		addToDate.month += (daysToAdd / 29);
-		return addToDate;
-	}
-	else if (daysToAdd % 28 == 0)
-	{
-		addToDate.month += (daysToAdd / 28);
-		return addToDate;
-	}
-	else if ((addToDate.day + daysToAdd) < 28)
-	{
-		addToDate.day += daysToAdd;
-		return addToDate;
-	}
-	else {
-		// since the daysToAdd and the private variables are ints, the quotient will also be an integer
-		addToDate.year += (daysToAdd / 365);
-		yearsToSubtract += (daysToAdd / 365);
-		daysToAdd -= (yearsToSubtract * 365);
-		addToDate.month += (daysToAdd / 28);
-		monthsToSubtract += (daysToAdd / 28);
-		daysToAdd -= (monthsToSubtract * 28);
-		addToDate.day += daysToAdd;
-		return addToDate;
-
-	}
+	return addToDate;
 }
 
 date& operator-(int daysToSub, date& subFromDate) {
 	// this is an approximate solution, it will only be inaccurate by about a few days or so as long as you aren't adding a huge number of days.
 	// you can't just subtract the days since they sit within months and years which you have to convert them too.
 
-	// initialize variables
-	int yearsToSubtract = 0;
-	int monthsToSubtract = 0;
 
-	if (daysToSub % 365 == 0)
+	for (int i = 0; i < daysToSub; i++)
 	{
-		subFromDate.year -= (daysToSub / 365);
-		return subFromDate;
-
+		subFromDate.operator--(0);
 	}
-	else if (daysToSub % 366 == 0)
-	{
-		subFromDate.year -= (daysToSub / 366);
-		return subFromDate;
-	}
-	else if (daysToSub % 31 == 0)
-	{
-		subFromDate.month -= (daysToSub / 31);
-		return subFromDate;
-	}
-	else if (daysToSub % 30 == 0)
-	{
-		subFromDate.month -= (daysToSub / 30);
-		return subFromDate;
-	}
-	else if (daysToSub % 29 == 0)
-	{
-		subFromDate.month -= (daysToSub / 29);
-		return subFromDate;
-	}
-	else if (daysToSub % 28 == 0)
-	{
-		subFromDate.month -= (daysToSub / 28);
-		return subFromDate;
-	}
-	else if ((subFromDate.day + daysToSub) < 28)
-	{
-		subFromDate.day -= daysToSub;
-		return subFromDate;
-	}
-	else {
-		// since the daysToAdd and the private variables are ints, the quotient will also be an integer
-		subFromDate.year -= (daysToSub / 365);
-		yearsToSubtract += (daysToSub / 365);
-		daysToSub -= (yearsToSubtract * 365);
-		subFromDate.month -= (daysToSub / 28);
-		monthsToSubtract += (daysToSub / 28);
-		daysToSub -= (monthsToSubtract * 28);
-		subFromDate.day -= daysToSub;
-		return subFromDate;
-
-	}
+	return subFromDate;
 }
 
 std::istream& operator>>(std::istream& in, date& dateToFill) {
